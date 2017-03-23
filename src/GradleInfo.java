@@ -9,10 +9,10 @@ public class GradleInfo {
     private String parentPath;
 
     public GradleInfo(String path) {
-        this.fileName = Common.getFileName(path);
+        this.fileName = FileUtil.getFileName(path);
 
         urlHash = Common.getHash(BASE_URL + "/" + fileName);
-        parentPath = String.format(GRADLE_USER_HOME + "/%s/%s",  Common.removeExtension(fileName), urlHash);
+        parentPath = String.format(GRADLE_USER_HOME + "/%s/%s",  FileUtil.removeExtension(fileName), urlHash);
     }
 
     public String getFileName() {
